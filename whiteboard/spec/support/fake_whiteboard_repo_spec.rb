@@ -1,0 +1,4 @@
+require "whiteboard/contracts/whiteboard_repo_contract"
+require "support/fake_whiteboard_repo"
+
+whiteboard_repo_contract FakeWhiteboardRepo
