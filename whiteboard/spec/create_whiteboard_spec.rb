@@ -5,14 +5,14 @@ describe "create whiteboard" do
   it "requires name" do
     create_whiteboard(name: "", gui: gui, repo: repo)
 
-    expect(gui.spy_validation_errors).to include(name: :required)
+    expect(gui.spy_validation_errors).to include(field: :name, validation: :required)
   end
 
   it "requires names be unique" do
     create_whiteboard(name: "valid name", gui: gui, repo: repo)
     create_whiteboard(name: "valid name", gui: gui, repo: repo)
 
-    expect(gui.spy_validation_errors).to include(name: :unique)
+    expect(gui.spy_validation_errors).to include(field: :name, validation: :unique)
   end
 
   it "send an id for the created whiteboard back to the gui" do
