@@ -12,7 +12,6 @@ Bundler.require(*Rails.groups)
 
 module WhiteboardWeb
   class Application < Rails::Application
-    require_relative "../../../whiteboard/spec/support/fake_whiteboard_repo"
-    config.whiteboard_repo = FakeWhiteboardRepo.new
+    config.whiteboard_repo = Persistence::WhiteboardRepo.new
   end
 end
